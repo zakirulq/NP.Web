@@ -1,3 +1,3 @@
 # NP.Web
-Please run npm i
-And get all packages
+Please run "npm i"
+Run from visual studio by hitting F5
