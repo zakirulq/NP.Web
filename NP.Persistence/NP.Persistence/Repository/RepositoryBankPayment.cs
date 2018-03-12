@@ -19,11 +19,12 @@ namespace NP.Persistence.Repository
 			var isSuccessful = false;
 			try
 			{
+				//TODO: All validation rules need to be called before further process
 				var bankPayment = $"{entity.BankAccount.BSB}" +
 						$",{entity.BankAccount.AccountNumber}" +
 						$",{entity.BankAccount.AccountName}," +
 						$"{entity.Reference}" +
-						$",{entity.Amount}";
+						$",{string.Format("{0:N2}", entity.Amount)}";
 
 				_context.Set.Add(bankPayment);
 				isSuccessful = true;
@@ -35,5 +36,12 @@ namespace NP.Persistence.Repository
 
 			return isSuccessful;
 		}
+
+#if DEBUG
+		public IPersistenceContext GetContextForTest()
+		{
+			return _context;
+		}
+#endif
 	}
 }

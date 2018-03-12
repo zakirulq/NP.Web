@@ -11,3 +11,5 @@
 /NP.Web/NP.Web/node_modules
 /NP.Web/NP.Web/obj/Debug
 /NP.Web/packages
+/NP.Web/NP.Persistence.Test/obj/Debug
+/NP.Web/NP.Persistence.Test/bin/Debug
