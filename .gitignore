@@ -3,3 +3,11 @@
 ################################################################################
 
 /node_modules
+/NP.Persistence/NP.Persistence/bin/Debug
+/NP.Persistence/NP.Persistence/obj/Debug
+/NP.Persistence/.vs/NP.Persistence/v15
+/NP.Web/.vs
+/NP.Web/NP.Web/bin
+/NP.Web/NP.Web/node_modules
+/NP.Web/NP.Web/obj/Debug
+/NP.Web/packages

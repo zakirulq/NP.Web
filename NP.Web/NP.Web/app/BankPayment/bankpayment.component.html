@@ -1,0 +1,110 @@
+﻿<h2>Payment details</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+	<div class="form-group">
+		<label for="bsb">BSB</label>
+		<input ngModel
+			   name="bsb"
+			   #bsb="ngModel"
+			   id="bsb"
+			   [(ngModel)]="payment.BSB"
+			   type="number"
+			   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+			   class="form-control"
+			   required
+			   maxlength="6"
+			   minlength="6" />
+		<div *ngIf="bsb.touched && bsb.errors">
+			<div class="alert alert-danger"
+				 *ngIf="bsb.errors.required">
+				BSB is required.
+			</div>
+			<div class="alert alert-danger"
+				 *ngIf="bsb.errors.minlength">
+				A BSB is at lease 6 digits.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="accountNumber">Account Number</label>
+		<input ngModel
+			   name="accountNumber"
+			   #accountNumber="ngModel"
+			   id="accountNumber"
+			   [(ngModel)]="payment.AcountNumber"
+			   type="number"
+			   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+			   class="form-control"
+			   required
+			   maxlength="8"
+			   minlength="8" />
+		<div *ngIf="accountNumber.touched && accountNumber.errors">
+			<div class="alert alert-danger"
+				 *ngIf="accountNumber.errors.required">
+				Account Number is required.
+			</div>
+			<div class="alert alert-danger"
+				 *ngIf="accountNumber.errors.minlength">
+				An Account Number is at lease 8 digits.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="accountName">Account Name</label>
+		<input ngModel
+			   name="accountName"
+			   #accountName="ngModel"
+			   id="accountName"
+			   [(ngModel)]="payment.AccountName"
+			   type="text"
+			   class="form-control"
+			   required
+			   maxlength="50" />
+		<div *ngIf="accountName.touched && accountName.errors">
+			<div class="alert alert-danger"
+				 *ngIf="accountName.errors.required">
+				Account Name is required.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="referenceNumber">Reference Number</label>
+		<input ngModel
+			   name="referenceNumber"
+			   #referenceNumber="ngModel"
+			   id="referenceNumber"
+			   [(ngModel)]="payment.ReferenceNumber"
+			   type="text"
+			   class="form-control"
+			   required
+			   maxlength="50" />
+		<div *ngIf="referenceNumber.touched && referenceNumber.errors">
+			<div class="alert alert-danger"
+				 *ngIf="referenceNumber.errors.required">
+				Reference Number is required.
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="amount">Amount</label>
+		<div class="input-group">
+			<span class="input-group-addon">$</span>
+			<input ngModel
+				   name="amount"
+				   #amount="ngModel"
+				   id="amount"
+				   [(ngModel)]="payment.Amount"
+				   type="number"
+				   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+				   class="form-control"
+				   required
+				   maxlength="16" />
+			<div *ngIf="amount.touched && amount.errors">
+				<div class="alert alert-danger"
+					 *ngIf="amount.errors.required">
+					Amount is required.
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+</form>

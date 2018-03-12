@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+node_modules
+npm-debug.log
+.idea
+src/*.js
+src/*.js.map
+src/*.d.ts
+.DS_Store
