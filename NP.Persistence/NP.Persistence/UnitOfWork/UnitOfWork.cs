@@ -11,6 +11,7 @@ namespace NP.Persistence.UnitOfWork
 		public UnitOfWork(IPersistenceContext context)
 		{
 			_context = context;
+			//BankPayment object creation need to be done by IOC container and inject like "context" to remove the dependency
 			BankPayment = new RepositoryBankPayment(context);
 		}
 
