@@ -51,6 +51,8 @@ export class BankPaymentComponent implements OnInit {
             timeout: 5000,
             theme: 'default'
         };
+        console.log('Preparing to show the toast!');
         this.toastyService.success(toastOptions);
-    }
+        console.log('The toast was successful!');
+	}
 }
