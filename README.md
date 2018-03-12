@@ -1,3 +1,3 @@
 # NP.Web
-Please run "npm i"
-Run from visual studio by hitting F5
+Please run "npm i" to install node_module
+then run the application from visual studio by hitting F5
